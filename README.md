@@ -9,6 +9,11 @@ Repozytorium robocze pod pomysły i dokumentację związaną z platformą **[Orb
 | [Co budować na Orbiteus — analiza](docs/ORBITUEUS-IDEAS.md) — [**Pages**](https://msulich7-hub.github.io/Testorbiteka/orbiteus-ideas/) | Skrót platformy, mocne strony i lista pomysłów na projekty. |
 | [Orbiteus CRM — megadesign](docs/crm-megadesign.md) — [**Pages**](https://msulich7-hub.github.io/Testorbiteka/crm-megadesign/) | Synteza researchu wielu CRM, backlog P0/P1/P2, role, mapowanie modułów. |
 
+### Testy (czy strona /docs buduje się poprawnie)
+
+- **CI:** po pushu na `main` workflow **Docs site** (`.github/workflows/docs-ci.yml`) w katalogu `docs/` odpala `bundle exec jekyll build` (gem `github-pages` jak na GitHub Pages) i sprawdza, czy powstały `index.html` oraz strony `crm-megadesign` i `orbiteus-ideas`.
+- **Lokalnie (Linux z Ruby):** `cd docs && bundle install && bundle exec jekyll build -d _site` — wynik w `docs/_site/`.
+
 ### Podgląd na GitHub Pages
 
 **Settings → Pages → Branch `main`, folder `/docs`**, potem strona po ok. minucie:
