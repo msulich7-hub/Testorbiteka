@@ -1,0 +1,18 @@
+# GitHub Pages (Jekyll) — źródło: folder /docs w repozytorium
+# Ustawienia → Pages → Build and deployment → Branch: main, Folder: /docs
+
+title: Testorbiteka
+description: Notatki Orbiteus — analiza platformy i megadesign CRM
+lang: pl
+
+# Strona projektu (nie user.github.io): ścieżka repozytorium
+baseurl: "/Testorbiteka"
+url: "https://msulich7-hub.github.io"
+
+# Motyw obsługiwany przez GitHub Pages
+theme: minima
+
+minima:
+  skin: dark
+
+markdown: kramdown

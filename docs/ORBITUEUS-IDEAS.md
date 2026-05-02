@@ -1,4 +1,8 @@
-# Orbiteus — co to jest i co warto na nim zbudować
+---
+layout: page
+title: "Orbiteus — co budować"
+permalink: /orbiteus-ideas/
+---
 
 Ten dokument jest krótką analizą repozytorium **[orbiteus/orbiteus](https://github.com/orbiteus/orbiteus)** (silnik do budowy własnych ERP/CRM i aplikacji biznesowych) oraz **propozycjami projektów**, które naturalnie pasują do tej platformy.
 
