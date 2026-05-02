@@ -1,0 +1,8 @@
+# Jekyll / GitHub Pages (local + CI)
+docs/_site/
+docs/vendor/
+docs/.bundle/
+
+# Ruby
+*.gem
+.bundle/

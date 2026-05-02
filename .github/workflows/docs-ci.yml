@@ -1,0 +1,48 @@
+name: Docs site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs-ci.yml"
+  pull_request:
+    paths:
+      - "docs/**"
+      - ".github/workflows/docs-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  jekyll-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: false
+
+      - name: Bundle install
+        working-directory: docs
+        run: |
+          gem install bundler
+          bundle config set path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll (same layout as GitHub Pages /docs)
+        working-directory: docs
+        run: bundle exec jekyll build --destination ./_site --verbose --trace
+
+      - name: Sanity-check HTML output
+        run: |
+          test -f docs/_site/index.html
+          test -f docs/_site/crm-megadesign/index.html
+          test -f docs/_site/orbiteus-ideas/index.html

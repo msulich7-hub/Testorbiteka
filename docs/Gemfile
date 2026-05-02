@@ -1,0 +1,4 @@
+source "https://rubygems.org"
+
+# Mirrors github.io Pages runtime (includes Jekyll + gh-pages–approved gems)
+gem "github-pages", group: :jekyll_plugins
