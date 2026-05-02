@@ -1,4 +1,8 @@
-# Orbiteus CRM — megadesign: research 10 CRM + 5 person
+---
+layout: page
+title: "Orbiteus CRM — megadesign"
+permalink: /crm-megadesign/
+---
 
 Dokument zbiera **wyniki równoległego researchu** (10 perspektyw: Salesforce, HubSpot, Pipedrive, Zoho, monday Sales CRM, Freshsales, Dynamics 365 Sales, Close, Attio, Bitrix24) oraz **5 ról** (klient B2B, handlowiec/SDR, szef sprzedaży, CEO, marketing demand gen). Celem jest odpowiedź na pytanie: **co „genialnego” można zbudować jako CRM na silniku Orbiteus** — bez kopiowania monolitu, z jasnym MVP i przewagą modularną.
 
