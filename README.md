@@ -14,6 +14,24 @@ Repozytorium robocze pod pomysły i dokumentację związaną z platformą **[Orb
 - **CI:** po pushu na `main` workflow **Docs site** (`.github/workflows/docs-ci.yml`) w katalogu `docs/` odpala `bundle exec jekyll build` (gem `github-pages` jak na GitHub Pages) i sprawdza, czy powstały `index.html` oraz strony `crm-megadesign` i `orbiteus-ideas`.
 - **Lokalnie (Linux z Ruby):** `cd docs && bundle install && bundle exec jekyll build -d _site` — wynik w `docs/_site/`.
 
+### Zrzuty ekranu (Playwright, opcjonalnie)
+
+Strona Jekyll używa `baseurl: /Testorbiteka` — lokalny serwer musi serwować katalog **nadrzędny**, w którym leży podfolder `Testorbiteka` (tak jak na `github.io`). Następnie:
+
+```bash
+# 1) zbuduj stronę
+cd docs && bundle exec jekyll build -d _site
+
+# 2) serwuj (przykład)
+mkdir -p /tmp/ghroot/Testorbiteka && cp -r _site/* /tmp/ghroot/Testorbiteka/
+python3 -m http.server 9876 --directory /tmp/ghroot &
+
+# 3) zrzuty (wymaga: pip install playwright && playwright install chromium)
+python3 scripts/gh-pages-smoke-screenshots.py
+```
+
+Pliki trafiają do `artifacts/gh-pages-smoke/` (katalog w `.gitignore`).
+
 ### Podgląd na GitHub Pages
 
 **Settings → Pages → Branch `main`, folder `/docs`**, potem strona po ok. minucie:
