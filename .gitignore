@@ -1,0 +1,2 @@
+# Lokalne hasła i sekrety VPS — nigdy nie commituj
+config/vps-credentials.env
